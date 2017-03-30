@@ -180,10 +180,6 @@ var Util = function ($) {
 
 
 
-
-
-
-
 /**
  * --------------------------------------------------------------------------
  * Bootstrap (v4.0.0-alpha.6): collapse.js
@@ -535,3 +531,7 @@ var Collapse = function ($) {
 
   return Collapse;
 }(jQuery);
+
+
+
+}();
