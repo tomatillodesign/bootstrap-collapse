@@ -50,6 +50,36 @@ Here is the complete HTML Collapse MarkUp
 </div>
 </code>
 
+Also, here is the CSS that you may want to customize:
+
+<code>
+.collapse-button-area {
+     text-align: center;
+     width: 100%;
+     padding: 20px;
+     background: #333;
+     color: #fff;
+     border: 1px solid #333;
+}
+
+a.collapse-section {
+     color: #fff;
+     font-weight: 700;
+     text-decoration: none;
+}
+
+.collapse, .collapsing {
+     text-align: left;
+     border: 1px solid #555;
+     background: #fafafa;
+     padding: 30px;
+     color: #333;
+}
+
+.clb-collapse-area {
+     margin-bottom: 20px;
+}
+</code>
 
 == Changelog ==
 

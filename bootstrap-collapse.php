@@ -98,3 +98,47 @@ function clb_collapse_section( $atts , $content = null ) {
 
 }
 add_shortcode( 'collapse', 'clb_bootstrap_collapse\clb_collapse_section' );
+
+
+
+
+
+/**
+ * Create the plugin option page.
+ *
+ * @since 1.3.0
+ */
+
+function plugin_page() {
+
+    /*
+     * Use the add options_page function
+     * add_options_page( $page_title, $menu_title, $capability, $menu-slug, $function )
+     */
+
+     add_options_page(
+        __( 'Simple Bootstrap Collapse','simple-bootstrap-collapse' ), //$page_title
+        __( 'Simple Bootstrap Collapse ', 'simple-bootstrap-collapse' ), //$menu_title
+        'manage_options', //$capability
+        'simple-bootstrap-collapse', //$menu-slug
+        __NAMESPACE__ . '\\plugin_options_page' //$callbackfunction
+      );
+}
+add_action( 'admin_menu', __NAMESPACE__ . '\\plugin_page' );
+
+
+/**
+ * Include the plugin option page.
+ *
+ * @since 1.3.0
+ */
+
+function plugin_options_page() {
+
+    if( !current_user_can( 'manage_options' ) ) {
+
+      wp_die( "Hall and Oates 'Say No Go'" );
+    }
+
+   require( 'inc/options-page-wrapper.php' );
+}
