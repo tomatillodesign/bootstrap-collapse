@@ -1,4 +1,4 @@
-<?php               namespace clb_bootstrap;
+<?php               namespace clb_bootstrap_collapse;
 /*
 Plugin Name: Simple Bootstrap Collapse
 Plugin URI: http://www.tomatillodesign.com
@@ -36,7 +36,7 @@ add_action( 'plugins_loaded', __NAMESPACE__ . '\\load_textdomain' );
 //Script-tac-ulous -> All the Scripts and Styles Registered and Enqueued, scripts first - then styles
 function scripts_styles() {
 
-	wp_register_script( 'collapsejs' , plugins_url( '/js/bootstrap.js',  __FILE__), array( 'jquery' ), '3.3.5', true );
+	wp_register_script( 'collapsejs' , plugins_url( '/js/collapse.js',  __FILE__), array( 'jquery' ), '3.3.5', true );
 	wp_register_style( 'collapsecss' , plugins_url( '/css/collapse.css',  __FILE__), '' , '3.3.5', 'all' );
 
 
@@ -70,7 +70,7 @@ add_action( 'admin_enqueue_scripts',  __NAMESPACE__ . '\\admin_collapse' );
  * @since 1.0
  */
 
-function clb_bootstrap_section_callback() {
+function clb_bootstrap_collapse_section_callback() {
 
 }
 
@@ -89,9 +89,12 @@ function clb_collapse_section( $atts , $content = null ) {
 		$atts
 	);
 
-     $output = '<a class="collapse-section" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">' . $atts['title'] .'</a><div class="collapse" id="collapseExample">' . $content . '</div>';
+	$title =  $atts['title'];
+	$slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title)));
+
+     $output = '<div class="clb-collapse-area"><a class="collapse-section" data-toggle="collapse" href="#' . $slug . '" aria-expanded="false" aria-controls="' . $slug . '"><div class="collapse-button-area">' . $title .'</div></a><div class="collapse" id="' . $slug . '">' . $content . '</div></div>';
 
 	return $output;
 
 }
-add_shortcode( 'collapse', 'clb_collapse_section' );
+add_shortcode( 'collapse', 'clb_bootstrap_collapse\clb_collapse_section' );
