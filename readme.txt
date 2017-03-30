@@ -21,7 +21,7 @@ This plugin adds Bootstrap Collapse functionality to WordPress. All you need to 
 
 This plugin adds Bootstrap v4 Collapse functionality to WordPress.
 
-It adds just the Bootstrap Javascript Plugin for Collapse and associated CSS.
+It adds just the Bootstrap Javascript Plugin for Collapse and associated CSS, along with a simple shortcode for use in the page editor.
 
 This does not bring in any other Bootstrap javascript or CSS functionality.
 
@@ -29,26 +29,25 @@ There is sample HTML mark up code in the readme.txt for a selector and modal tar
 
 == Installation ==
 
+Here is the shortcode usage:
 
+[collapse title="Button Title Here"]
+Your Content Here.
+[/collapse]
 
-Here is a simple HTML Modal MarkUp
+Here is the complete HTML Collapse MarkUp
 <code>
-<!-- Button trigger modal -->
-<a class="btn btn-primary btn-lg" href="#myModal1" data-toggle="modal">Launch demo modal</a>
+<div class="clb-collapse-area">
 
-<!-- Modal -->
-<div id="myModal1" class="modal fade" tabindex="-1">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button class="close" type="button" data-dismiss="modal">×</button>
-					<h4 class="modal-title">My Title in a Modal Window</h4>
-			</div>
-			<div class="modal-body">This is the body of a modal...</div>
-			<div class="modal-footer">This is the footer of a modal...</div>
-			</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+     <a class="collapse-section" data-toggle="collapse" href="#button-title-here" aria-expanded="false" aria-controls="button-title-here">
+          <div class="collapse-button-area">Button Title Here</div>
+     </a>
+
+     <div class="collapse" id="button-title-here">
+     <p>Your Content Here.</p>
+     </div>
+
+</div>
 </code>
 
 
