@@ -118,7 +118,7 @@ function plugin_page() {
 
      add_options_page(
         __( 'Simple Bootstrap Collapse','simple-bootstrap-collapse' ), //$page_title
-        __( 'Simple Bootstrap Collapse ', 'simple-bootstrap-collapse' ), //$menu_title
+        __( 'Bootstrap Collapse ', 'simple-bootstrap-collapse' ), //$menu_title
         'manage_options', //$capability
         'simple-bootstrap-collapse', //$menu-slug
         __NAMESPACE__ . '\\plugin_options_page' //$callbackfunction
