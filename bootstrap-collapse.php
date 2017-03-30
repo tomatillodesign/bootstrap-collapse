@@ -36,8 +36,8 @@ add_action( 'plugins_loaded', __NAMESPACE__ . '\\load_textdomain' );
 //Script-tac-ulous -> All the Scripts and Styles Registered and Enqueued, scripts first - then styles
 function scripts_styles() {
 
-	wp_register_script( 'collapsejs' , plugins_url( '/js/bootstrap.min.js',  __FILE__), array( 'jquery' ), '3.3.5', true );
-	wp_register_style( 'collapsecss' , plugins_url( '/css/bootstrap.css',  __FILE__), '' , '3.3.5', 'all' );
+	wp_register_script( 'collapsejs' , plugins_url( '/js/collapse.js',  __FILE__), array( 'jquery' ), '3.3.5', true );
+	wp_register_style( 'collapsecss' , plugins_url( '/css/collapse.css',  __FILE__), '' , '3.3.5', 'all' );
 
 
 	wp_enqueue_script( 'collapsejs' );
@@ -55,8 +55,8 @@ function admin_collapse($hook) {
     if ( 'settings_page_bootstrap-collapse' != $hook ) {
         return;
     }
-    wp_enqueue_script( 'collapsejs' , plugins_url( '/js/bootstrap.min.js',  __FILE__), array( 'jquery' ), '3.3.5', true );
-    wp_enqueue_style( 'collapsecss' , plugins_url( '/css/bootstrap.css',  __FILE__), '' , '3.3.5', 'all' );
+    wp_enqueue_script( 'collapsejs' , plugins_url( '/js/collapse.js',  __FILE__), array( 'jquery' ), '3.3.5', true );
+    wp_enqueue_style( 'collapsecss' , plugins_url( '/css/collapse.css',  __FILE__), '' , '3.3.5', 'all' );
     wp_enqueue_style( 'wp-color-picker' );
     wp_enqueue_script( 'wp-color-picker-alpha', plugins_url( '/js/wp-color-picker-alpha.min.js',  __FILE__ ), array( 'wp-color-picker' ), '1.3.0', true );
 }
