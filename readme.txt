@@ -5,7 +5,7 @@ Tags: collapse, toggles, bootstrap
 Requires at least: 3.8
 Tested up to: 4.7
 Stable tag: 1.0
-Plugin Name: Bootstrap Collapse
+Plugin Name: Simple Bootstrap Collapse
 Plugin URI: http://www.tomatillodesign.com
 Description: Using Bootstrap Collapse in WordPress
 Author: Chris Liu-Beers

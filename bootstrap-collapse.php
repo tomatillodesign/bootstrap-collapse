@@ -1,14 +1,14 @@
 <?php               namespace clb_bootstrap;
 /*
-Plugin Name: Bootstrap Collapse
+Plugin Name: Simple Bootstrap Collapse
 Plugin URI: http://www.tomatillodesign.com
-Description: Using Bootstrap Collapse in WordPress
+Description: Using Bootstrap 4.0+ Collapse in WordPress
 Author: Chris Liu-Beers
 Version: 1.0
 Author URI: http://www.tomatillodesign.com
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
-Text Domain: bootstrap-collapse
+Text Domain: simple-bootstrap-collapse
 Domain Path: /languages/
 */
 
@@ -73,3 +73,25 @@ add_action( 'admin_enqueue_scripts',  __NAMESPACE__ . '\\admin_collapse' );
 function clb_bootstrap_section_callback() {
 
 }
+
+
+
+
+
+// Add Shortcode
+function clb_collapse_section( $atts , $content = null ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'title' => 'Title_Here',
+		),
+		$atts
+	);
+
+     $output = '<a class="collapse-section" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">' . $atts['title'] .'</a><div class="collapse" id="collapseExample">' . $content . '</div>';
+
+	return $output;
+
+}
+add_shortcode( 'collapse', 'clb_collapse_section' );
