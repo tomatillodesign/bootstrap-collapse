@@ -57,10 +57,14 @@ a.collapse-section {
      text-align: left;
      border: 1px solid #555;
      background: #fafafa;
-     padding: 30px;
+     padding: 0px;
      color: #333;
 }
 
 .clb-collapse-area {
      margin-bottom: 20px;
+}
+
+.collapse-text {
+	padding: 20px;
 }
