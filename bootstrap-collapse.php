@@ -92,7 +92,7 @@ function clb_collapse_section( $atts , $content = null ) {
 	$title =  $atts['title'];
 	$slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title)));
 
-     $output = '<div class="clb-collapse-area"><a class="collapse-section" data-toggle="collapse" href="#' . $slug . '" aria-expanded="false" aria-controls="' . $slug . '"><div class="collapse-button-area">' . $title .'</div></a><div class="collapse" id="' . $slug . '">' . $content . '</div></div>';
+     $output = '<div class="clb-collapse-area"><a class="collapse-section" data-toggle="collapse" href="#' . $slug . '" aria-expanded="false" aria-controls="' . $slug . '"><div class="collapse-button-area">' . $title .'</div></a><div class="collapse" id="' . $slug . '"><div class="collapse-text">' . $content . '</div></div></div>';
 
 	return $output;
 
